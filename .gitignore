@@ -1,3 +1,32 @@
+# Node.js dependencies
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Logs
+**/logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,9 +34,6 @@ __pycache__/
 
 # C extensions
 *.so
-
-# Vim
-*.swp
 
 # Distribution / packaging
 .Python
@@ -104,15 +130,6 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -131,9 +148,32 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# IDE files
-.idea/
-.vscode/
+*/**/venv
+*/**/*.egg-info
+*/**/default.profraw
 
-# .DS_Store files
-.DS_Store
+# Terraform files
+
+*/**/.terraform*
+
+# Base data exclude
+
+*/**/data/
+data/outputs
+*/**/cdk.*/
+*/**/configs_*
+*/**/input
+
+# Linter / formatter caches
+# Ruff writes a .gitignore containing '*' inside .ruff_cache, so this is belt and
+# braces - but relying on that is accidental, and `git check-ignore .ruff_cache`
+# reports the directory itself as not ignored.
+-.ruff_cache/
+
+# Ignore Claude-related directories (any depth)
+.claude/
+**/.claude/
+
+# Ignore any 'codex' directories (any depth)
+codex/
+**/codex/
